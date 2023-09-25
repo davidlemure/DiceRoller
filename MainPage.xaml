@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiceRoller.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                x:Name="diceImage"
+                Source="dice_d4.png"
+                SemanticProperties.Description="A dice with the number 1 facing up"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="labelNumber"
+                Text="1"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Picker
+                x:Name="sidesPicker"
+                Title="Number of sides"
+                 HorizontalOptions="Center">
+                <Picker.ItemsSource >
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>8</x:Int32>
+                        <x:Int32>10</x:Int32>
+                        <x:Int32>12</x:Int32>
+                        <x:Int32>20</x:Int32>
+                        <x:Int32>100</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            
+            <Button
+                x:Name="RollBtn"
+                Text="Roll dice!"
+                SemanticProperties.Hint="Roll a virtual dice"
+                Clicked="OnRollClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
